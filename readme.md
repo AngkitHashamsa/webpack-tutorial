@@ -164,3 +164,10 @@ module.exports = {
   plugins: [new HtmlWebpackPlugin({ template: "./src/template.html" })],
 };
 ```
+
+### Webpack merge
+
+it is pakage install webpackmegre to merge the three diff webpack
+https://www.npmjs.com/package/webpack-merge
+
+npm i -D webpack-merge
