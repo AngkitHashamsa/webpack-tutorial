@@ -121,3 +121,46 @@ module.exports = {
   },
 };
 ```
+
+### contenthash
+
+It use to hash the main.js so that it does not remain a constant file as it can may cause unwanted cahce in browser
+
+```js
+module.exports = {
+  output: {
+    filename: "[name].[contenthash].js",
+    path: path.resolve(__dirname, "dist"),
+  },
+};
+```
+
+### clean
+
+it deletes the previous hash file
+
+```js
+module.exports = {
+  output: {
+    filename: "[name].[contenthash].js",
+    path: path.resolve(__dirname, "dist"),
+    clean: true,
+  },
+};
+```
+
+### HtmlWebpackPlugin
+
+The HtmlWebpackPlugin simplifies creation of HTML files to serve your webpack bundles. This is especially useful for webpack bundles that include a hash in the filename which changes every compilation. You can either let the plugin generate an HTML file for you, supply your own template using lodash templates, or use your own loader.
+
+```js
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+module.exports = {
+  entry: "index.js",
+  output: {
+    path: path.resolve(__dirname, "./dist"),
+    filename: "index_bundle.js",
+  },
+  plugins: [new HtmlWebpackPlugin({ template: "./src/template.html" })],
+};
+```
