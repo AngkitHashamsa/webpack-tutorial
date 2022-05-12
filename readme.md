@@ -53,3 +53,39 @@ module.exports = {
 };
 
 ```
+
+# Loaders
+
+## css loader
+
+#### css loader convert css to js
+
+## StyleLoader
+
+### enables to import styles
+
+### important
+
+#### css loader need to be transpile the css first but the entry point is from end thats y css loader is at end
+
+start "css-loader" and then "style-loader"
+["style-loader", "css-loader"] <---- entry from here
+
+```js
+module.exports = {
+  mode: "development",
+  entry: "./src/index.js",
+  output: {
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
+  },
++  module: {
++    rules: [
++      {
++        test: /\.css$/i,
++        use: ["style-loader", "css-loader"],
++      },
++    ],
+  },
+};
+```
