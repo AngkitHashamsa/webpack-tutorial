@@ -171,3 +171,7 @@ it is pakage install webpackmegre to merge the three diff webpack
 https://www.npmjs.com/package/webpack-merge
 
 npm i -D webpack-merge
+
+## html loader
+
+npm install --save-dev html-loader
